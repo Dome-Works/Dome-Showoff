@@ -90,7 +90,7 @@ const layouts = [
       </div>
 
       <p v-reveal class="caption">
-        The Server never talks to Docker directly. Each Socket only talks to its own host.
+        <strong>DOME never exposes your Docker daemon directly.</strong> The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through its API — not the raw Docker API.
       </p>
     </div>
   </section>
@@ -179,6 +179,11 @@ text {
   margin-top: var(--space-5);
   max-width: 60ch;
   color: var(--muted);
+}
+
+.caption strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 @media (min-width: 640px) {
