@@ -24,20 +24,20 @@ const rows = [
     frame: 'DOME: Container details',
     src: '/media/exited-panel.jpg',
     alt: 'uptime-kuma container details panel showing state exited, image, volume kuma_data and start, stop, delete buttons',
-    w: 2560,
-    h: 1440,
+    w: 1600,
+    h: 900,
     spots: [[74.9, 44.7]],
     toast: 'Started uptime-kuma.',
   },
   {
     eyebrow: '// 04 · compose',
     title: 'Write Compose. Deploy.',
-    body: 'Create a stack, edit its compose file in the built-in editor, then deploy. DOME runs docker compose up on that host. Stacks found on the host stay read-only.',
+    body: 'Create a stack, edit its compose file in the built-in editor, then deploy. DOME runs <code>docker compose up</code> on that host. Stacks found on the host stay read-only.',
     frame: 'DOME: Stacks',
     src: '/media/compose-editor.jpg',
     alt: 'DOME Edit compose file dialog for the media stack, with the compose YAML for jellyfin, sonarr and radarr in a code editor',
-    w: 2560,
-    h: 1440,
+    w: 1600,
+    h: 900,
     spots: [[85.5, 83.0]],
   },
 ]
@@ -50,7 +50,7 @@ const rows = [
         <div class="text">
           <p class="eyebrow">{{ r.eyebrow }}</p>
           <h3>{{ r.title }}</h3>
-          <p class="body">{{ r.body }}</p>
+          <p class="body" v-html="r.body" />
         </div>
         <div class="media">
           <div class="glow" aria-hidden="true" />
@@ -64,7 +64,7 @@ const rows = [
                 :style="{ left: `${x}%`, top: `${y}%` }"
                 aria-hidden="true"
               />
-              <div v-if="r.toast" class="toast" role="status">
+              <div v-if="r.toast" class="toast" aria-hidden="true">
                 <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
                   <circle cx="10" cy="10" r="10" fill="currentColor" />
                   <path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="var(--panel)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -104,6 +104,12 @@ const rows = [
 .body {
   max-width: 46ch;
   color: var(--muted);
+}
+
+.body :deep(code) {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--text);
 }
 
 .media {
