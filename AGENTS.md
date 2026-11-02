@@ -20,7 +20,7 @@ npm run preview
 - `src/components/ui/{BrowserFrame,TerminalCard}.vue`
 - `src/components/NavBar.vue`, `src/components/sections/*.vue`
 - `src/App.vue`, `src/main.ts`, `src/env.d.ts`
-- `public/CNAME`, `public/robots.txt` and `public/media/*` (all images, video, logo, favicons, og image). Nothing else in `public/`.
+- `public/CNAME`, `public/robots.txt`, `public/sitemap.xml` and `public/media/*` (all images, video, logo, favicons, og image). Nothing else in `public/`.
 - `index.html` (title, OG/Twitter tags, favicon, theme-color `#0b0f14`), `vite.config.ts` (`base: '/'`)
 - `.github/workflows/deploy.yml`
 - Docs: `DESIGN.md`, `DESIGN_SYSTEM.md`, `AGENTS.md`, `CLAUDE.md`, `README.md`
