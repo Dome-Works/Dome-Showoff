@@ -4,18 +4,19 @@ import { REPO_URL, VERSION } from '../../site'
 
 const video = ref<HTMLVideoElement>()
 const muted = ref(true)
-const reduced = ref(false)
 const playing = ref(true)
 
 onMounted(() => {
   const v = video.value
   if (!v) return
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    reduced.value = true
     playing.value = false
     v.removeAttribute('autoplay')
     v.pause()
+    return
   }
+  // autoplay can be blocked (e.g. data saver): fall back to the Play button
+  v.play().catch(() => (playing.value = false))
 })
 
 function toggleMute() {
@@ -25,8 +26,7 @@ function toggleMute() {
 }
 
 function play() {
-  video.value?.play()
-  playing.value = true
+  video.value?.play().catch(() => {})
 }
 </script>
 
@@ -64,7 +64,7 @@ function play() {
             @play="playing = true"
           />
           <button
-            v-if="reduced && !playing"
+            v-if="!playing"
             class="ctl ctl--play"
             type="button"
             @click="play"

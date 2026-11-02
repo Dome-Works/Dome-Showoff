@@ -72,12 +72,12 @@ const rows = [
             <div class="glow" aria-hidden="true" />
             <BrowserFrame title="DOME — Diagrams">
               <img
-                src="/media/diagram-overview.jpg"
-                alt="DOME diagram for host homelab: containers grouped into media, monitoring and proxy stacks"
                 width="1600"
                 height="900"
                 loading="lazy"
                 decoding="async"
+                src="/media/diagram-overview.jpg"
+                alt="DOME diagram for host homelab: containers grouped into media, monitoring and proxy stacks"
               />
             </BrowserFrame>
           </div>
@@ -101,7 +101,7 @@ const rows = [
 }
 
 .head {
-  max-width: 22ch;
+  max-width: 48rem;
   margin-bottom: var(--space-7);
 }
 

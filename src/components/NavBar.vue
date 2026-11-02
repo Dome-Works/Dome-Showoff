@@ -72,6 +72,8 @@ const links = [
 
 .skip:focus {
   transform: none;
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 .bar {

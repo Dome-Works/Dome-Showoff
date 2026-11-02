@@ -22,7 +22,43 @@ onBeforeUnmount(() => clearTimeout(timer))
 
 <template>
   <div class="code">
-    <div v-if="label" class="label">{{ label }}</div>
+    <div class="bar">
+      <span class="label">{{ label }}</span>
+      <button class="copy" type="button" aria-label="Copy command" @click="copy">
+        <svg
+          v-if="status !== 'copied'"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </svg>
+        <svg
+          v-else
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+        <span aria-live="polite">{{
+          status === 'copied' ? 'Copied' : status === 'failed' ? 'Copy failed' : 'Copy'
+        }}</span>
+      </button>
+    </div>
     <pre class="body"><code><span
       v-for="(line, i) in code.split('\n')"
       :key="i"
@@ -30,40 +66,6 @@ onBeforeUnmount(() => clearTimeout(timer))
       :class="{ 'line--cmd': line.trim() }"
     >{{ line }}
 </span></code></pre>
-    <button class="copy" type="button" aria-label="Copy command" @click="copy">
-      <svg
-        v-if="status !== 'copied'"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="9" y="9" width="13" height="13" rx="2" />
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-      </svg>
-      <svg
-        v-else
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M20 6 9 17l-5-5" />
-      </svg>
-      <span aria-live="polite">{{
-        status === 'copied' ? 'Copied' : status === 'failed' ? 'Copy failed' : 'Copy'
-      }}</span>
-    </button>
   </div>
 </template>
 
@@ -76,8 +78,15 @@ onBeforeUnmount(() => clearTimeout(timer))
   min-width: 0;
 }
 
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-2) 0 var(--space-4);
+}
+
 .label {
-  padding: var(--space-3) var(--space-4) 0;
   font-size: var(--fs-eyebrow);
   color: var(--muted);
 }
@@ -85,8 +94,6 @@ onBeforeUnmount(() => clearTimeout(timer))
 .body {
   margin: 0;
   padding: var(--space-4);
-  /* leave room for the copy button */
-  padding-right: calc(var(--space-4) + 120px);
   overflow-x: auto;
   font-family: var(--font-mono);
   font-size: var(--fs-small);
@@ -105,9 +112,6 @@ onBeforeUnmount(() => clearTimeout(timer))
 }
 
 .copy {
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
   display: inline-flex;
   align-items: center;
   justify-content: center;

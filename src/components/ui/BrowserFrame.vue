@@ -75,9 +75,9 @@ defineProps<{ title?: string; beam?: boolean }>()
     transparent 100%
   );
   /* ring-only mask: show the gradient in the padding box, hide the content box */
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(var(--bg) 0 0) content-box, linear-gradient(var(--bg) 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  mask: linear-gradient(var(--bg) 0 0) content-box exclude, linear-gradient(var(--bg) 0 0);
   pointer-events: none;
   animation: beam var(--dur-beam) linear infinite;
 }

@@ -102,7 +102,7 @@ const layouts = [
 }
 
 .head {
-  max-width: 22ch;
+  max-width: 48rem;
   margin-bottom: var(--space-7);
 }
 

@@ -56,7 +56,7 @@ const rows = [
           <div class="glow" aria-hidden="true" />
           <BrowserFrame :title="r.frame">
             <div class="shot">
-              <img :src="r.src" :alt="r.alt" :width="r.w" :height="r.h" loading="lazy" decoding="async" />
+              <img :width="r.w" :height="r.h" loading="lazy" decoding="async" :src="r.src" :alt="r.alt" />
               <span
                 v-for="[x, y] in r.spots"
                 :key="`${x}-${y}`"
@@ -117,8 +117,8 @@ const rows = [
 
 .spot {
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: clamp(8px, 2.8%, 28px);
+  aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border: 2px solid var(--accent);
   border-radius: var(--radius-pill);
