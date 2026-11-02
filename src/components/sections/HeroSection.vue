@@ -46,7 +46,7 @@ function play() {
         deploy right from there.
       </p>
       <div class="ctas">
-        <a class="btn btn--primary" href="#install">Install in 60 seconds</a>
+        <a class="btn btn--primary" href="#install">Get started</a>
         <a class="btn btn--ghost" :href="REPO_URL" target="_blank" rel="noopener">Star on GitHub</a>
       </div>
 
