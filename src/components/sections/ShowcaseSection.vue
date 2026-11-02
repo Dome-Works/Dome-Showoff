@@ -34,11 +34,11 @@ const rows = [
     title: 'Write Compose. Deploy.',
     body: 'Create a stack, edit its compose file in the built-in editor, then deploy. DOME runs docker compose up on that host. Stacks found on the host stay read-only.',
     frame: 'DOME — Stacks',
-    src: '/media/stack-deployed.jpg',
-    alt: 'media stack panel after deploy, with toast Deployed media.',
-    w: 960,
-    h: 540,
-    spots: [],
+    src: '/media/compose-editor.jpg',
+    alt: 'DOME Edit compose file dialog for the media stack, with the compose YAML for jellyfin, sonarr and radarr in a code editor',
+    w: 2560,
+    h: 1440,
+    spots: [[85.5, 83.0]],
   },
 ]
 </script>
