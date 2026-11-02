@@ -17,7 +17,7 @@
 | `--accent-glow` | `#5a9fff` at .35 alpha (`rgb(90 159 255 / .35)`) | glows, beam |
 | `--warning` | `#e3b341` | preview note only |
 | `--terminal` | `#0f141b` | terminal card body |
-| `--bg-glass` | `color-mix(in srgb, var(--bg) 72%, transparent)` | translucent surfaces: NavBar blur bg, toast, overlays |
+| `--bg-glass` | `color-mix(in srgb, var(--bg) 72%, transparent)` | translucent surfaces: NavBar blur bg, overlays |
 
 Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()` in components.
 
@@ -36,7 +36,7 @@ Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()`
 | `--fs-eyebrow` | `0.8125rem` (mono, letter-spacing 0.08em) |
 
 ## Spacing (4px base)
-`--space-1: 4px` · `-2: 8px` · `-3: 12px` · `-4: 16px` · `-5: 24px` · `-6: 32px` · `-7: 48px` · `-8: 64px` · `-9: 96px` · `-10: 128px`
+`--space-1: 4px` · `-2: 8px` · `-3: 12px` · `-4: 16px` · `-5: 24px` · `-6: 32px` · `-7: 48px` · `-8: 64px` · `-9: 96px`
 
 ## Layout
 - `--container: 1200px`; side gutter `--space-4` (16px) on mobile, `--space-5` (24px) from 640px.
@@ -62,10 +62,9 @@ Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()`
 | `--dur-beam` | `6s` linear infinite |
 | `--dur-flow` | `1.6s` linear infinite |
 | `--ease-out` | `cubic-bezier(0.22, 1, 0.36, 1)` |
-| `--ease-in-out` | `cubic-bezier(0.65, 0, 0.35, 1)` |
 
 - **Reveal:** directive `v-reveal` (`src/directives/reveal.ts`, one IntersectionObserver) adds `.is-visible` once the element enters view. CSS: revealed elements start `opacity: 0; transform: translateY(16px)`; `.is-visible` transitions to `opacity: 1; transform: none` over `--dur-reveal` `--ease-out`. Optional stagger via `--reveal-delay`.
-- **Border beam:** conic-gradient (accent) rotating via animated `@property --beam-angle`, `--dur-beam`. `HeroSection` owns the hero video's beam CSS locally; `BrowserFrame`'s `beam` prop is a separate implementation for screenshots.
+- **Border beam:** conic-gradient (accent) rotating via animated `@property --beam-angle`, `--dur-beam`. `HeroSection` owns the hero video's beam CSS.
 - **Edge flow:** architecture SVG edges use `stroke-dasharray` + animated `stroke-dashoffset`, `--dur-flow`.
 - **Reduced motion:** `@media (prefers-reduced-motion: reduce)` disables all animations and transitions (beam, flow, toast slide, hover transforms); `v-reveal` adds `.is-visible` immediately; hero video stays paused on its poster.
 
@@ -73,7 +72,7 @@ Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()`
 ### UI primitives (`src/components/ui/`)
 | Component | Props | Slots / notes |
 |---|---|---|
-| `BrowserFrame.vue` | `title?: string`, `beam?: boolean` | default slot (the screenshot). Window chrome (three dots + title). For raw UI screenshots only, never the hero video. `beam` adds the border beam. |
+| `BrowserFrame.vue` | `title?: string` | default slot (the screenshot). Window chrome (three dots + title). For raw UI screenshots only, never the hero video. |
 | `TerminalCard.vue` | `title: string`, `lines: { text: string; kind?: 'prompt' \| 'out' \| 'dim' }[]` | No slots. Mono, `--terminal` body; `prompt` lines get a `$`. Content is fictional but plausible `docker ps` output, using container names from the screenshots. |
 
 ### Shell and sections
