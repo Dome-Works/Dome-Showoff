@@ -31,7 +31,7 @@ const hosts = [
       'd05b3e8a71c9   pihole/pihole:2024.07              Up 20 days                pihole',
       '1a6c92f4e0d8   homeassistant/home-assistant:2024  Up 20 days                homeassistant',
       'f83e5b0c2a76   eclipse-mosquitto:2                Up 20 days                mosquitto',
-      '4e91d7a3c5b2   portainer/agent:2.21               Up 20 days                agent',
+      '4e91d7a3c5b2   koenkk/zigbee2mqtt:1.39.0          Up 20 days                zigbee2mqtt',
     ],
   },
 ].map((h) => ({
