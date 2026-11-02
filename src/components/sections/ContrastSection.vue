@@ -156,10 +156,6 @@ const rows = [
   margin-left: var(--space-6);
 }
 
-.stack :deep(.body) {
-  max-height: 12.5rem;
-}
-
 .media {
   position: relative;
   isolation: isolate;
