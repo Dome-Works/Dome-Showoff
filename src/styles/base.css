@@ -87,6 +87,7 @@ h3 {
   color: var(--accent);
 }
 
+/* Parent must be position: relative. */
 .glow {
   position: absolute;
   inset: -10%;
