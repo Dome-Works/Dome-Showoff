@@ -26,7 +26,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | 4 | `sections/ShowcaseSection.vue` | n/a | Three alternating rows (below). |
 | 5 | `sections/FeatureGrid.vue` | `#features` | Bento of 8 cards from the Content facts. Inline SVG icons, no icon library. |
 | 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "DOME never exposes your Docker daemon directly. The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through the DOME API, not the raw Docker API." |
-| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
+| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted right in Docker, the place you know best. One main host & one Socket per additional Docker environment, and never look back to the Docker CLI."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
 
 ### Showcase rows (section 4)
 - "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots.

@@ -9,7 +9,7 @@ import { REPO_URL } from '../../site'
       <header v-reveal class="head">
         <p class="eyebrow">// 07 · get started</p>
         <h2>Up in 60 seconds.</h2>
-        <p class="lede">Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place.</p>
+        <p class="lede">Self-hosted right in Docker, the place you know best. One main host &amp; one Socket per additional Docker environment, and never look back to the Docker CLI.</p>
         <a class="btn" :href="`${REPO_URL}#readme`" target="_blank" rel="noopener">
           Get started on GitHub
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
