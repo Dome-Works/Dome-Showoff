@@ -1,0 +1,24 @@
+{
+  "enabledPlugins": {
+    "taste-skill@taste-skill": true,
+    "impeccable@impeccable": true,
+    "frontend-design@anthropic-plugin-directory": true,
+    "superpowers@anthropic-plugin-directory": true,
+    "ponytail@ponytail": true,
+    "chrome-devtools-mcp@chrome-devtools-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  }
+}
