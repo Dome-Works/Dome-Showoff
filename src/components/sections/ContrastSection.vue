@@ -45,9 +45,9 @@ const hosts = [
 }))
 
 const rows = [
-  ['Rows of container IDs', 'Stacks as visual groups'],
-  ['One SSH session per host', 'A tab per host'],
-  ['SSH in to restart', 'Click ▶ on the node'],
+  ['Rows of containers and visual clutter', 'Visual diagram with grouped nodes'],
+  ['Multiple SSH sessions for multiple hosts', 'All hosts in 1 app, divided by tabs'],
+  ['Manage through docker-commands', 'Easy-to-use buttons & live feedback'],
 ]
 </script>
 

@@ -41,9 +41,7 @@ function play() {
       </p>
       <h1>Your entire Docker infrastructure,<br /><span class="accent">under one roof.</span></h1>
       <p class="sub">
-        Stop SSH-ing to every device separately. Stop cluttering your desktop with multiple terminals to manage your Docker infrastructure. DOME shows every container on every host in
-        one place, as a diagram per host grouped by Compose stack, and you can start, stop, edit and
-        deploy right from there.
+        Stop SSH-ing to every device separately. Stop cluttering your desktop with multiple terminals to manage your Docker infrastructure. DOME shows every container on every host in one browser-app, grouped and manageable right from there.
       </p>
       <div class="ctas">
         <a class="btn btn--primary" href="#install">Get started</a>
