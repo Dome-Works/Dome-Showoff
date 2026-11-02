@@ -17,6 +17,9 @@
 | `--accent-glow` | `#5a9fff` at .35 alpha (`rgb(90 159 255 / .35)`) | glows, beam |
 | `--warning` | `#e3b341` | preview note only |
 | `--terminal` | `#0f141b` | terminal card body |
+| `--bg-glass` | `color-mix(in srgb, var(--bg) 72%, transparent)` | translucent surfaces: NavBar blur bg, toast, overlays |
+
+Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()` in components.
 
 ## Type
 - Sans: `--font-sans: 'Geist Variable', system-ui, sans-serif` (`@fontsource-variable/geist`).
@@ -62,7 +65,7 @@
 | `--ease-in-out` | `cubic-bezier(0.65, 0, 0.35, 1)` |
 
 - **Reveal:** directive `v-reveal` (`src/directives/reveal.ts`, one IntersectionObserver) adds `.is-visible` once the element enters view. CSS: revealed elements start `opacity: 0; transform: translateY(16px)`; `.is-visible` transitions to `opacity: 1; transform: none` over `--dur-reveal` `--ease-out`. Optional stagger via `--reveal-delay`.
-- **Border beam:** conic-gradient (accent) rotating around the hero video frame via animated `@property --beam-angle`, `--dur-beam`.
+- **Border beam:** conic-gradient (accent) rotating via animated `@property --beam-angle`, `--dur-beam`. `HeroSection` owns the hero video's beam CSS locally; `BrowserFrame`'s `beam` prop is a separate implementation for screenshots.
 - **Edge flow:** architecture SVG edges use `stroke-dasharray` + animated `stroke-dashoffset`, `--dur-flow`.
 - **Reduced motion:** `@media (prefers-reduced-motion: reduce)` disables all animations and transitions (beam, flow, toast slide, hover transforms); `v-reveal` adds `.is-visible` immediately; hero video stays paused on its poster.
 
@@ -71,7 +74,7 @@
 | Component | Props | Slots / notes |
 |---|---|---|
 | `BrowserFrame.vue` | `title?: string`, `beam?: boolean` | default slot (the screenshot). Window chrome (three dots + title). For raw UI screenshots only, never the hero video. `beam` adds the border beam. |
-| `TerminalCard.vue` | `title: string`, `lines: { text: string; kind?: 'prompt' \| 'out' \| 'dim' }[]` | No slots. Mono, `--terminal` body; `prompt` lines get a `$`. |
+| `TerminalCard.vue` | `title: string`, `lines: { text: string; kind?: 'prompt' \| 'out' \| 'dim' }[]` | No slots. Mono, `--terminal` body; `prompt` lines get a `$`. Content is fictional but plausible `docker ps` output, using container names from the screenshots. |
 | `CodeBlock.vue` | `code: string`, `label?: string` | Copy button using `navigator.clipboard`, "Copied" state, `aria-label`, visible focus ring. Clipboard must hold the exact `code`. |
 
 ### Shell and sections

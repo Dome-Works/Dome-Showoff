@@ -31,9 +31,9 @@ npm run preview
 3. **Content facts only.** Copy comes from "Content facts" in `DESIGN.md`; never invent features or contradict Limits.
 4. **Reduced motion required.** Every animation is off under `prefers-reduced-motion: reduce`.
 5. **Assets live in `public/media/`**, referenced as `/media/…`.
-6. No new dependencies beyond the plan's list; keep code lean.
-7. **Small commits per task**, message `T<id>: <summary>`; stage explicit paths only (never `git add -A` / `git add .`).
-8. **Never push**, open PRs, or touch the remote unless the user explicitly asks.
+6. No new dependencies beyond: vue, vite, @vitejs/plugin-vue, typescript, vue-tsc, @vue/tsconfig, @fontsource-variable/geist, @fontsource-variable/geist-mono. Keep code lean.
+7. **Small commits per task**: message `T<id>: <summary>` (T<id> is the plan task id), ending with the trailer `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Stage explicit paths only (never `git add -A` / `git add .`). Run `git add <paths>` and `git commit` as separate calls.
+8. **Never push**, open PRs, or touch the remote.
 9. **On a permission denial, stop.** Don't retry or work around it; report the blocked command.
 10. Don't modify or delete pre-existing root files outside your task's ownership.
 
