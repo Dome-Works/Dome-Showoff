@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref } from 'vue'
 import { REPO_URL } from '../../site'
+import { track } from '../../analytics'
 
 const COMMAND =
   'curl -fsSL https://raw.githubusercontent.com/Dome-Works/DOME/main/docker-compose.yml -o docker-compose.yml && docker compose up -d'
@@ -15,6 +16,7 @@ async function copy() {
   } catch {
     status.value = 'Copy failed'
   }
+  track('install_command_copied', { success: status.value === 'Copied' })
   clearTimeout(timer)
   timer = setTimeout(() => (status.value = ''), 1500)
 }

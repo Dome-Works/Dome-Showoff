@@ -15,7 +15,8 @@ npm run preview
 
 ## File structure
 - `src/styles/tokens.css`: all design tokens. `src/styles/base.css`: reset, typography, `.container` / `.eyebrow` / `.glow`.
-- `src/site.ts`: `VERSION`, `REPO_URL`.
+- `src/site.ts`: `VERSION`, `REPO_URL`, `POSTHOG_KEY` (public token, hardcoded on purpose).
+- `src/analytics.ts`: cookieless PostHog init (EU) and `track()`; events are listed there and in the plan. Never add cookies/storage or `identify`.
 - `src/directives/reveal.ts`: `v-reveal`.
 - `src/components/ui/{BrowserFrame,TerminalCard}.vue`
 - `src/components/NavBar.vue`, `src/components/sections/*.vue`

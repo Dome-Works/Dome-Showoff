@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { REPO_URL, VERSION } from '../../site'
+import { track } from '../../analytics'
 
 const video = ref<HTMLVideoElement>()
 const muted = ref(true)
@@ -17,16 +18,26 @@ onMounted(() => {
   }
   // autoplay can be blocked (e.g. data saver): fall back to the Play button
   v.play().catch(() => (playing.value = false))
+  const hit = new Set<number>()
+  v.addEventListener('timeupdate', () => {
+    for (const p of [25, 50, 75]) {
+      if (v.duration && v.currentTime / v.duration >= p / 100 && !hit.has(p)) {
+        hit.add(p)
+        track('hero_video_progress', { percent: p })
+      }
+    }
+  })
 })
 
 function toggleMute() {
   if (!video.value) return
   muted.value = !muted.value
   video.value.muted = muted.value
+  if (!muted.value) track('hero_video_unmuted')
 }
 
 function play() {
-  video.value?.play().catch(() => {})
+  video.value?.play().then(() => track('hero_video_played', { manual: true })).catch(() => {})
 }
 </script>
 
