@@ -39,7 +39,7 @@ onBeforeUnmount(() => clearTimeout(timer))
             <code>{{ COMMAND }}</code>
           </div>
         </div>
-        <p class="hint">Then open <code>http://localhost:5200</code> and register the local Socket at <code>http://socket:8080</code>.</p>
+        <p class="hint">Then open <code>http://localhost:5200</code> and register the local Socket at <code>http://socket:8080</code>, or any additional sockets through <code>http://device-ip:5110</code>.</p>
         <a class="btn" :href="`${REPO_URL}#readme`" target="_blank" rel="noopener">
           Get started on GitHub
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
