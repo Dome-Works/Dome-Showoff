@@ -19,13 +19,7 @@ See `AGENTS.md` (file layout and hard rules), `DESIGN.md` (concept, copy, conten
 
 ## Deploy
 
-Push to `main` runs GitHub Actions (`.github/workflows/deploy.yml`) and publishes `dist` to GitHub Pages.
-
-One-time manual setup:
-
-1. Repo Settings → Pages → Source: "GitHub Actions".
-2. Same page: custom domain `dome-works.nl`, tick Enforce HTTPS.
-3. DNS: apex A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` CNAME → `dome-works.github.io`.
+Pushing to main deploys via GitHub Actions.
 
 ## Licenses
 

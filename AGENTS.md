@@ -43,5 +43,3 @@ Edit `VERSION` in `src/site.ts` (the one place). Rebuild.
 
 ## Deploy
 - Push to `main` triggers `.github/workflows/deploy.yml`: checkout → setup-node 22 + npm cache → `npm ci` → `npm run build` → configure-pages → upload-pages-artifact (`dist`) → deploy-pages.
-- `public/CNAME` is documentation only: the Actions deploy ignores it. The custom domain is set in **repo Settings → Pages** (Source "GitHub Actions", custom domain `dome-works.nl`, Enforce HTTPS).
-- DNS: apex A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` CNAME to `dome-works.github.io`.
