@@ -14,7 +14,7 @@ const wide = {
     { x: 10, y: 148, w: 110, h: 64, t: 'Browser' },
     { x: 170, y: 148, w: 150, h: 64, t: 'Client', s: 'React' },
     { x: 360, y: 148, w: 170, h: 64, t: 'Server', s: '.NET 10 · SQLite', hot: true },
-    ...names.map((n, i) => ({ x: 580, y: 28 + i * 120, w: 120, h: 64, t: 'Socket', s: n })),
+    ...names.map((_, i) => ({ x: 580, y: 28 + i * 120, w: 120, h: 64, t: 'Socket', s: '.NET 10 · API' })),
     ...names.map((_, i) => ({ x: 780, y: 28 + i * 120, w: 150, h: 64, t: 'Docker Engine' })),
   ] as Node[],
 }
@@ -25,7 +25,7 @@ const tall = {
     { x: 100, y: 10, w: 160, h: 56, t: 'Browser' },
     { x: 100, y: 106, w: 160, h: 56, t: 'Client', s: 'React' },
     { x: 80, y: 202, w: 200, h: 56, t: 'Server', s: '.NET 10 · SQLite', hot: true },
-    ...names.map((n, i) => ({ x: 10 + i * 120, y: 338, w: 100, h: 56, t: 'Socket', s: n })),
+    ...names.map((_, i) => ({ x: 10 + i * 120, y: 338, w: 100, h: 56, t: 'Socket', s: '.NET 10 · API' })),
     ...names.map((_, i) => ({ x: 10 + i * 120, y: 454, w: 100, h: 56, t: 'Docker', s: 'Engine' })),
   ] as Node[],
 }
