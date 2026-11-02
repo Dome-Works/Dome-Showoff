@@ -15,7 +15,7 @@ npm run preview
 
 ## File structure
 - `src/styles/tokens.css`: all design tokens. `src/styles/base.css`: reset, typography, `.container` / `.eyebrow` / `.glow`.
-- `src/site.ts`: `VERSION`, `REPO_URL`, `CHANGELOG_URL`, `LICENSE_URL`.
+- `src/site.ts`: `VERSION`, `REPO_URL`.
 - `src/directives/reveal.ts`: `v-reveal`.
 - `src/components/ui/{BrowserFrame,TerminalCard}.vue`
 - `src/components/NavBar.vue`, `src/components/sections/*.vue`

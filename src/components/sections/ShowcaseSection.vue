@@ -20,7 +20,7 @@ const rows = [
   {
     eyebrow: '// 03 · act on it',
     title: 'Spot it. Start it.',
-    body: 'An exited container shows up red on the diagram. Open it to see its image and volumes (name, mount path, size, RO/RW), then start, stop or delete it.',
+    body: 'All containers, managed by DOME or not, show up in the diagram. Open a container\'s detail-pane to see its image, volumes, and Docker controls.',
     frame: 'DOME: Container details',
     src: '/media/exited-panel.jpg',
     alt: 'uptime-kuma container details panel showing state exited, image, volume kuma_data and start, stop, delete buttons',
