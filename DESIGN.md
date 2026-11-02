@@ -59,7 +59,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 - Limits (never contradict them): no auth; no TLS between server and socket; no network or dependency edges yet; update checks cover Docker Hub + public GHCR only.
 
 ## Asset map
-**All used assets live in `public/media/`** (served at `/media/…`; includes logo, favicons and og image). After outputs are verified, root originals and everything unused are deleted: `brag-output.zip`, `brag.jpg`, `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (and `brag.mp4`, which is moved). The repo root then holds only code, docs and LICENSE.
+**All used assets live in `public/media/`** (served at `/media/…`; includes favicons and og image). After outputs are verified, root originals and everything unused are deleted: `brag-output.zip`, `brag.jpg`, `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (and `brag.mp4`, which is moved). The repo root then holds only code, docs and LICENSE.
 
 Zip is extracted to `$Z = <scratchpad>/zip/brag-output`.
 
@@ -67,11 +67,11 @@ Zip is extracted to `$Z = <scratchpad>/zip/brag-output`.
 |---|---|---|
 | `media/brag.mp4` | repo root `brag.mp4` | Move (it's untracked, so a plain `mv`) |
 | `media/hero-poster.jpg` | `$Z/work/stills/t6.0.jpg` (verify that it shows the diagram; otherwise pick another still from t5–t9) | jpg q80 |
-| `media/diagram-overview.jpg` | `$Z/work/explore-diagrams.png` (1600×900; full homelab diagram, media/monitoring/proxy stacks) | jpg q85 |
+| `media/diagram-overview.jpg` | `$Z/work/shots/diag-homelab.png` (3840×2160, clean homelab diagram) | crop to the node strip (2700×760 at +950+864), resize to 1600×450, jpg q85 |
 | `media/sockets.jpg` | `$Z/work/explore-sockets.png` (1600×900; 3 hosts, green dots at x≈294px, y≈214/263/312 → **left 18.4%, top 23.8/29.2/34.7%**) | jpg q85 |
-| `media/exited-panel.jpg` | `$Z/work/probe-a.png` (3840×2160; uptime-kuma exited + details panel; ▶ hotspot at **left 74.9%, top 44.7%**) | resize to 2560w, jpg q80 |
-| `media/compose-editor.jpg` | `shots/compose.png` (3840×2160, Edit compose file modal) | resize 2560w, jpg q82 |
-| `media/logo.png` (512), `media/favicon.png` (64), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
+| `media/exited-panel.jpg` | `$Z/work/probe-a.png` (3840×2160; uptime-kuma exited + details panel; ▶ hotspot at **left 74.9%, top 44.7%**) | resize to 1600×900, jpg q82 |
+| `media/compose-editor.jpg` | `shots/compose.png` (3840×2160, Edit compose file modal) | resize to 1600×900, jpg q82 |
+| `media/favicon.png` (64, also the nav/footer logo), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
 | `media/og.jpg` | root `brag.jpg` | Crop/resize to 1200×630 |
 
 Tools: `sips` for resize, crop, convert (macOS). `sips` can't circle-mask: use a ~10-line Node script with no new dependency, or ImageMagick if `magick` exists. Keep scripts outside the zip dir; run Python with `-I`.

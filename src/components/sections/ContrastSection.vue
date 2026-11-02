@@ -73,7 +73,7 @@ const rows = [
             <BrowserFrame title="DOME: Diagrams">
               <img
                 width="1600"
-                height="900"
+                height="450"
                 loading="lazy"
                 decoding="async"
                 src="/media/diagram-overview.jpg"

@@ -25,7 +25,7 @@ const links = [
     <a class="skip" href="#top">Skip to content</a>
     <div class="container bar">
       <a class="brand" href="#top">
-        <img src="/media/logo.png" alt="" width="32" height="32" />
+        <img src="/media/favicon.png" alt="" width="32" height="32" />
         <span>DOME</span>
       </a>
       <nav class="links" aria-label="Primary">
@@ -48,7 +48,7 @@ const links = [
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
+  background: var(--bg-glass);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid transparent;

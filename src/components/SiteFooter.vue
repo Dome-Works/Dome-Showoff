@@ -6,7 +6,7 @@ import { CHANGELOG_URL, LICENSE_URL, REPO_URL } from '../site'
   <footer class="footer">
     <div class="container inner">
       <div class="brand">
-        <img src="/media/logo.png" alt="" width="32" height="32" />
+        <img src="/media/favicon.png" alt="" width="32" height="32" />
         <span>DOME</span>
       </div>
       <p class="tagline">Your entire Docker infrastructure, under one roof.</p>
