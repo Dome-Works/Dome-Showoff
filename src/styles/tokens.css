@@ -1,0 +1,61 @@
+:root {
+  /* colors */
+  --bg: #0b0f14;
+  --bg-2: #0f1419;
+  --panel: #161b22;
+  --border: #2a3340;
+  --accent: #5a9fff;
+  --running: #3dd68c;
+  --stopped: #f85149;
+  --text: #e6edf3;
+  --muted: #8b9bb0;
+  --accent-glow: rgb(90 159 255 / 0.35);
+  --warning: #e3b341;
+  --terminal: #0f141b;
+  --bg-glass: color-mix(in srgb, var(--bg) 72%, transparent);
+
+  /* type */
+  --font-sans: 'Geist Variable', system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --tracking-display: -0.03em;
+  --fs-display: clamp(2.5rem, 1.5rem + 5vw, 5rem);
+  --fs-h2: clamp(1.875rem, 1.2rem + 2.8vw, 3rem);
+  --fs-h3: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.8125rem;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* layout */
+  --container: 1200px;
+  --section-y: clamp(4rem, 3rem + 5vw, 8rem);
+
+  /* radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* shadows and glows */
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 12px 32px rgb(0 0 0 / 0.45);
+  --shadow-frame: 0 24px 64px rgb(0 0 0 / 0.6);
+  --glow-accent: 0 0 0 1px var(--accent-glow), 0 0 48px var(--accent-glow);
+
+  /* motion */
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-reveal: 700ms;
+  --dur-beam: 6s;
+  --dur-flow: 1.6s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
