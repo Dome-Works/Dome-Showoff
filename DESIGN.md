@@ -29,9 +29,9 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted right in Docker, the place you know best. One main host & one Socket per additional Docker environment, and never look back to the Docker CLI."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
 
 ### Showcase rows (section 4)
-- "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots.
-- "Spot it. Start it." → `media/exited-panel.jpg`, hotspot ring on ▶ at **left 74.9%, top 44.7%**. When the row enters view, an HTML toast "Started uptime-kuma." slides in at bottom-right with a green check.
-- "Write Compose. Deploy." → `media/compose-editor.jpg`, hotspot ring on the Save button at **left 85.5%, top 83.0%**.
+- "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots at **left 2.5%, top 42.9 / 56.9 / 70.9%**.
+- "Spot it. Start it." → `media/exited-panel.jpg`, hotspot ring on ▶ at **left 67.3%, top 31.6%**. When the row enters view, an HTML toast "Started uptime-kuma." slides in at bottom-right with a green check.
+- "Write Compose. Deploy." → `media/compose-editor.jpg`, hotspot ring on the Save button at **left 93.3%, top 90.6%**, ring size 7.6% of image width (optional third `spots` value; Save is 97x54px in the 1600px crop, ring = 1.25 x width).
 
 ## Copy voice
 **Do**
@@ -66,10 +66,10 @@ Zip is extracted to `$Z = <scratchpad>/zip/brag-output`.
 |---|---|---|
 | `media/brag.mp4` | repo root `brag.mp4` | Move (it's untracked, so a plain `mv`) |
 | `media/hero-poster.jpg` | `$Z/work/stills/t6.0.jpg` (verify that it shows the diagram; otherwise pick another still from t5–t9) | jpg q80 |
-| `media/diagram-overview.jpg` | `$Z/work/shots/diag-homelab.png` (3840×2160, clean homelab diagram) | crop to the node strip (2700×760 at +950+864), resize to 1600×450, jpg q85 |
-| `media/sockets.jpg` | `$Z/work/explore-sockets.png` (1600×900; 3 hosts, green dots at x≈294px, y≈214/263/312 → **left 18.4%, top 23.8/29.2/34.7%**) | jpg q85 |
-| `media/exited-panel.jpg` | `$Z/work/probe-a.png` (3840×2160; uptime-kuma exited + details panel; ▶ hotspot at **left 74.9%, top 44.7%**) | resize to 1600×900, jpg q82 |
-| `media/compose-editor.jpg` | `shots/compose.png` (3840×2160, Edit compose file modal) | resize to 1600×900, jpg q82 |
+| `media/diagram-overview.jpg` | `$Z/work/shots/diag-homelab.png` (3840×2160) | crop the media stack + its 3 containers (1120×580 at +985+965, native pixels), jpg q84 |
+| `media/sockets.jpg` | `$Z/work/explore-sockets.png` (1600×900) | crop heading + table (1032×350 at +268+64, native pixels, no sidebar); green dots at **left 2.5%, top 42.9/56.9/70.9%**; jpg q84 |
+| `media/exited-panel.jpg` | `$Z/work/shots/kuma-pane.png` (3840×2160; uptime-kuma exited + details panel) | crop node + details panel (2899×1536 at +922+480), resize to 1600×848; ▶ at **left 67.3%, top 31.6%**; jpg q84 |
+| `media/compose-editor.jpg` | `$Z/work/shots/compose.png` (3840×2160, Edit compose file modal) | crop the dialog (3149×1757 at +346+202), resize to 1600×893; Save at **left 93.3%, top 90.6%**; jpg q84 |
 | `media/favicon.png` (64, also the nav logo), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
 | `media/og.jpg` | root `brag.jpg` | Crop/resize to 1200×630 |
 
