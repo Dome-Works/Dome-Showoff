@@ -72,12 +72,12 @@ const rows = [
             <div class="glow" aria-hidden="true" />
             <BrowserFrame title="DOME: Diagrams">
               <img
-                width="1600"
-                height="450"
+                width="1120"
+                height="580"
                 loading="lazy"
                 decoding="async"
                 src="/media/diagram-overview.jpg"
-                alt="DOME diagram for host homelab: containers grouped into media, monitoring and proxy stacks"
+                alt="DOME diagram for host homelab: the media stack with jellyfin, sonarr and radarr nodes showing state and size"
               />
             </BrowserFrame>
           </div>

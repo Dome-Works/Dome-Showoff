@@ -9,12 +9,12 @@ const rows = [
     frame: 'DOME: Sockets',
     src: '/media/sockets.jpg',
     alt: 'DOME Sockets page listing hosts homelab, nas and edge-pi, all reachable',
-    w: 1600,
-    h: 900,
+    w: 1032,
+    h: 350,
     spots: [
-      [18.4, 23.8],
-      [18.4, 29.2],
-      [18.4, 34.7],
+      [2.5, 42.9],
+      [2.5, 56.9],
+      [2.5, 70.9],
     ],
   },
   {
@@ -25,8 +25,8 @@ const rows = [
     src: '/media/exited-panel.jpg',
     alt: 'uptime-kuma container details panel showing state exited, image, volume kuma_data and start, stop, delete buttons',
     w: 1600,
-    h: 900,
-    spots: [[74.9, 44.7]],
+    h: 848,
+    spots: [[67.3, 31.6]],
     toast: 'Started uptime-kuma.',
   },
   {
@@ -37,8 +37,8 @@ const rows = [
     src: '/media/compose-editor.jpg',
     alt: 'DOME Edit compose file dialog for the media stack, with the compose YAML for jellyfin, sonarr and radarr in a code editor',
     w: 1600,
-    h: 900,
-    spots: [[85.5, 83.0]],
+    h: 893,
+    spots: [[93.3, 90.6, 7.6]],
   },
 ]
 </script>
@@ -58,10 +58,10 @@ const rows = [
             <div class="shot">
               <img :width="r.w" :height="r.h" loading="lazy" decoding="async" :src="r.src" :alt="r.alt" />
               <span
-                v-for="[x, y] in r.spots"
+                v-for="[x, y, size] in r.spots"
                 :key="`${x}-${y}`"
                 class="spot"
-                :style="{ left: `${x}%`, top: `${y}%` }"
+                :style="{ left: `${x}%`, top: `${y}%`, ...(size && { width: `${size}%` }) }"
                 aria-hidden="true"
               />
               <div v-if="r.toast" class="toast" aria-hidden="true">
