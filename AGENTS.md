@@ -17,7 +17,7 @@ npm run preview
 - `src/styles/tokens.css`: all design tokens. `src/styles/base.css`: reset, typography, `.container` / `.eyebrow` / `.glow`.
 - `src/site.ts`: `VERSION`, `REPO_URL`, `CHANGELOG_URL`, `LICENSE_URL`.
 - `src/directives/reveal.ts`: `v-reveal`.
-- `src/components/ui/{BrowserFrame,TerminalCard,CodeBlock}.vue`
+- `src/components/ui/{BrowserFrame,TerminalCard}.vue`
 - `src/components/{NavBar,SiteFooter}.vue`, `src/components/sections/*.vue`
 - `src/App.vue`, `src/main.ts`, `src/env.d.ts`
 - `public/CNAME`, `public/robots.txt` and `public/media/*` (all images, video, logo, favicons, og image). Nothing else in `public/`.

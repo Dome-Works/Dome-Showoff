@@ -75,7 +75,6 @@ Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()`
 |---|---|---|
 | `BrowserFrame.vue` | `title?: string`, `beam?: boolean` | default slot (the screenshot). Window chrome (three dots + title). For raw UI screenshots only, never the hero video. `beam` adds the border beam. |
 | `TerminalCard.vue` | `title: string`, `lines: { text: string; kind?: 'prompt' \| 'out' \| 'dim' }[]` | No slots. Mono, `--terminal` body; `prompt` lines get a `$`. Content is fictional but plausible `docker ps` output, using container names from the screenshots. |
-| `CodeBlock.vue` | `code: string`, `label?: string` | Copy button using `navigator.clipboard`, "Copied" state, `aria-label`, visible focus ring. Clipboard must hold the exact `code`. |
 
 ### Shell and sections
 | Component | File | Anchor id |

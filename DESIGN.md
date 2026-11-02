@@ -21,12 +21,12 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | # | Component (`src/components/…`) | Anchor | Content |
 |---|---|---|---|
 | 1 | `NavBar.vue` | n/a | Sticky blur; logo + "DOME"; anchors Diagram · Features · Architecture · Install; GitHub button. |
-| 2 | `sections/HeroSection.vue` | n/a | `v{VERSION} preview` pill (from `src/site.ts`, not hard-coded). H1 is the tagline, with "under one roof." in accent. Sub is the share-copy hook. CTAs: "Install in 60 seconds" (→ `#install`) and "Star on GitHub". Media `media/brag.mp4` (autoplay muted loop playsinline) with poster, in a glow frame with border beam, plus mute/unmute button. The video has a soundtrack. |
+| 2 | `sections/HeroSection.vue` | n/a | `v{VERSION} preview` pill (from `src/site.ts`, not hard-coded). H1 is the tagline, with "under one roof." in accent. Sub is the share-copy hook. CTAs: "Get started" (→ `#install`) and "Star on GitHub". Media `media/brag.mp4` (autoplay muted loop playsinline) with poster, in a glow frame with border beam, plus mute/unmute button. The video has a soundtrack. |
 | 3 | `sections/ContrastSection.vue` | `#diagram` | 3 `TerminalCard`s vs `media/diagram-overview.jpg` in `BrowserFrame`. Three rows: "Rows of container IDs → Stacks as visual groups" · "One SSH session per host → A tab per host" · "SSH in to restart → Click ▶ on the node". |
 | 4 | `sections/ShowcaseSection.vue` | n/a | Three alternating rows (below). |
 | 5 | `sections/FeatureGrid.vue` | `#features` | Bento of 8 cards from the Content facts. Inline SVG icons, no icon library. |
 | 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "The Server never talks to Docker directly. Each Socket only talks to its own host." |
-| 7 | `sections/InstallSection.vue` | `#install` | Tabs "Published images" / "From source"; `CodeBlock`s with copy buttons; then the register-socket step; amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
+| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 — get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
 | 8 | `SiteFooter.vue` | n/a | Logo, tagline, GitHub / Changelog / GPL-3.0 links; any version text renders `v{VERSION} preview` from `src/site.ts`. |
 
 ### Showcase rows (section 4)
@@ -52,8 +52,8 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 - Tagline: "Your entire Docker infrastructure, under one roof." Name: "Docker Orchestration & Management Engine".
 - Hook: "Stop SSH-ing into every box to run docker ps. DOME shows every container on every host in one place, as a diagram per host grouped by Compose stack, and you can start, stop, edit and deploy right from there."
 - Features: multi-host (one Socket agent per Docker host); diagram tab per host; containers grouped by Compose stack; container state, image and mounted-volume size; volume name, mount path, size and RO/RW; update badge when a newer Docker Hub or public GHCR tag exists; start/stop/delete from the details panel; create, edit and deploy Compose stacks (Monaco editor) and managed vs read-only stacks; Socket version mismatch warnings; SQLite with auto migrations; `linux/amd64` + `linux/arm64` images; opt-in anonymous telemetry.
-- Install (published), verbatim: `docker compose pull` then `docker compose up -d`. Then open `http://localhost:5200/sockets` and register a Socket named `Local` at `http://socket:8080`.
-- From source, verbatim: `git clone https://github.com/Dome-Works/DOME.git` / `cd DOME` / `docker compose -f dev.docker-compose.yml up --build -d`.
+- Install commands are reference facts, README only, not shown on the site. Install (published), verbatim: `docker compose pull` then `docker compose up -d`. Then open `http://localhost:5200/sockets` and register a Socket named `Local` at `http://socket:8080`.
+- From source (README only), verbatim: `git clone https://github.com/Dome-Works/DOME.git` / `cd DOME` / `docker compose -f dev.docker-compose.yml up --build -d`.
 - Stack: .NET 10 + FastEndpoints + EF Core/SQLite server, React 19 + React Flow client, Socket agent on the Docker Unix socket.
 - Limits (never contradict them): no auth; no TLS between server and socket; no network or dependency edges yet; update checks cover Docker Hub + public GHCR only.
 
