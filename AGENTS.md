@@ -18,7 +18,7 @@ npm run preview
 - `src/site.ts`: `VERSION`, `REPO_URL`, `CHANGELOG_URL`, `LICENSE_URL`.
 - `src/directives/reveal.ts`: `v-reveal`.
 - `src/components/ui/{BrowserFrame,TerminalCard}.vue`
-- `src/components/{NavBar,SiteFooter}.vue`, `src/components/sections/*.vue`
+- `src/components/NavBar.vue`, `src/components/sections/*.vue`
 - `src/App.vue`, `src/main.ts`, `src/env.d.ts`
 - `public/CNAME`, `public/robots.txt` and `public/media/*` (all images, video, logo, favicons, og image). Nothing else in `public/`.
 - `index.html` (title, OG/Twitter tags, favicon, theme-color `#0b0f14`), `vite.config.ts` (`base: '/'`)

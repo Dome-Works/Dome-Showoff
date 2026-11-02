@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import NavBar from './components/NavBar.vue'
-import SiteFooter from './components/SiteFooter.vue'
 import HeroSection from './components/sections/HeroSection.vue'
 import ContrastSection from './components/sections/ContrastSection.vue'
 import ShowcaseSection from './components/sections/ShowcaseSection.vue'
@@ -19,5 +18,4 @@ import InstallSection from './components/sections/InstallSection.vue'
     <ArchitectureSection />
     <InstallSection />
   </main>
-  <SiteFooter />
 </template>

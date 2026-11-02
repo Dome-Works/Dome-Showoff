@@ -27,7 +27,6 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | 5 | `sections/FeatureGrid.vue` | `#features` | Bento of 8 cards from the Content facts. Inline SVG icons, no icon library. |
 | 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "DOME never exposes your Docker daemon directly. The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through the DOME API, not the raw Docker API." |
 | 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
-| 8 | `SiteFooter.vue` | n/a | Logo, tagline, GitHub / Changelog / GPL-3.0 links; any version text renders `v{VERSION} preview` from `src/site.ts`. |
 
 ### Showcase rows (section 4)
 - "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots.
@@ -71,7 +70,7 @@ Zip is extracted to `$Z = <scratchpad>/zip/brag-output`.
 | `media/sockets.jpg` | `$Z/work/explore-sockets.png` (1600×900; 3 hosts, green dots at x≈294px, y≈214/263/312 → **left 18.4%, top 23.8/29.2/34.7%**) | jpg q85 |
 | `media/exited-panel.jpg` | `$Z/work/probe-a.png` (3840×2160; uptime-kuma exited + details panel; ▶ hotspot at **left 74.9%, top 44.7%**) | resize to 1600×900, jpg q82 |
 | `media/compose-editor.jpg` | `shots/compose.png` (3840×2160, Edit compose file modal) | resize to 1600×900, jpg q82 |
-| `media/favicon.png` (64, also the nav/footer logo), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
+| `media/favicon.png` (64, also the nav logo), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
 | `media/og.jpg` | root `brag.jpg` | Crop/resize to 1200×630 |
 
 Tools: `sips` for resize, crop, convert (macOS). `sips` can't circle-mask: use a ~10-line Node script with no new dependency, or ImageMagick if `magick` exists. Keep scripts outside the zip dir; run Python with `-I`.

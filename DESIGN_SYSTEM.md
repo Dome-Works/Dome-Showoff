@@ -85,6 +85,5 @@ Any other translucency uses `color-mix()` on a token, never raw `rgba()`/`rgb()`
 | FeatureGrid | `src/components/sections/FeatureGrid.vue` | `#features` |
 | ArchitectureSection | `src/components/sections/ArchitectureSection.vue` | `#architecture` |
 | InstallSection | `src/components/sections/InstallSection.vue` | `#install` |
-| SiteFooter | `src/components/SiteFooter.vue` | n/a |
 
 `App.vue` imports every section in order (T0.3); later tasks must not edit `App.vue` or `main.ts`.
