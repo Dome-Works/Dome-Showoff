@@ -50,7 +50,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 
 ## Content facts (from DOME README. Agents must not invent beyond these.)
 - Tagline: "Your entire Docker infrastructure, under one roof." Name: "Docker Orchestration & Management Engine".
-- Hook: "Stop SSH-ing into every box to run docker ps. DOME shows every container on every host in one place, as a diagram per host grouped by Compose stack, and you can start, stop, edit and deploy right from there."
+- Hook: "Stop SSH-ing to every device separately. Stop cluttering your desktop with multiple terminals to manage your Docker infrastructure. DOME shows every container on every host in one place, as a diagram per host grouped by Compose stack, and you can start, stop, edit and deploy right from there."
 - Features: multi-host (one Socket agent per Docker host); diagram tab per host; containers grouped by Compose stack; container state, image and mounted-volume size; volume name, mount path, size and RO/RW; update badge when a newer Docker Hub or public GHCR tag exists; start/stop/delete from the details panel; create, edit and deploy Compose stacks (Monaco editor) and managed vs read-only stacks; Socket version mismatch warnings; SQLite with auto migrations; `linux/amd64` + `linux/arm64` images; opt-in anonymous telemetry.
 - Install commands are reference facts, README only, not shown on the site. Install (published), verbatim: `docker compose pull` then `docker compose up -d`. Then open `http://localhost:5200/sockets` and register a Socket named `Local` at `http://socket:8080`.
 - From source (README only), verbatim: `git clone https://github.com/Dome-Works/DOME.git` / `cd DOME` / `docker compose -f dev.docker-compose.yml up --build -d`.
