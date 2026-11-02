@@ -50,7 +50,7 @@ const features = [
   <section id="features" class="features">
     <div class="container">
       <header v-reveal class="head">
-        <p class="eyebrow">// 05 — features</p>
+        <p class="eyebrow">// 05 · features</p>
         <h2>Everything you'd SSH in for.</h2>
       </header>
 

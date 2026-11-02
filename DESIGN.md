@@ -9,7 +9,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | # | Decision | Rationale |
 |---|---|---|
 | 1 | **Palette = the app's own tokens** (`#0b0f14` bg, `#0f1419` bg-2, `#161b22` panel, `#2a3340` border, `#5a9fff` accent, `#3dd68c` running, `#f85149` stopped, `#e6edf3` text, `#8b9bb0` muted) | Screenshots blend into the page. Green = works, red = pain. No new brand colors. |
-| 2 | **Type:** Geist (display + body, tight tracking on headlines); Geist Mono for anything Docker-ish (commands, container names, eyebrows like `// 02 — how it works`). Self-hosted via `@fontsource-variable/geist` and `@fontsource-variable/geist-mono` | Matches the app's sans. Mono eyebrows are the techy signal Docker users spot. No Google Fonts call, so GDPR-clean. |
+| 2 | **Type:** Geist (display + body, tight tracking on headlines); Geist Mono for anything Docker-ish (commands, container names, eyebrows like `// 02 · how it works`). Self-hosted via `@fontsource-variable/geist` and `@fontsource-variable/geist-mono` | Matches the app's sans. Mono eyebrows are the techy signal Docker users spot. No Google Fonts call, so GDPR-clean. |
 | 3 | **Flash, but cheap:** radial blue glow behind media, animated border beam on the hero video, flowing `stroke-dashoffset` edges in the architecture SVG, scroll-reveal rise | All CSS plus one IntersectionObserver directive. No GSAP or three.js. All off under `prefers-reduced-motion`. |
 | 4 | **The flex is a contrast, not a claim.** Before: three terminal cards (`ssh homelab` / `ssh nas` / `ssh edge-pi` with walls of `docker ps`; fictional but plausible output, using container names from the screenshots). After: the diagram screenshot. Headline: *"Other managers give you a table. DOME gives you a map."* | Show the pain, then the map. |
 | 5 | **Real UI only.** Every product image is a real DOME capture with fictional homelab data. Only embellishment: an HTML toast "Started uptime-kuma." that reproduces the app's real toast text over the exited-state screenshot. | Honesty; no mockups. |
@@ -25,8 +25,8 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | 3 | `sections/ContrastSection.vue` | `#diagram` | 3 `TerminalCard`s vs `media/diagram-overview.jpg` in `BrowserFrame`. Three rows: "Rows of container IDs → Stacks as visual groups" · "One SSH session per host → A tab per host" · "SSH in to restart → Click ▶ on the node". |
 | 4 | `sections/ShowcaseSection.vue` | n/a | Three alternating rows (below). |
 | 5 | `sections/FeatureGrid.vue` | `#features` | Bento of 8 cards from the Content facts. Inline SVG icons, no icon library. |
-| 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "DOME never exposes your Docker daemon directly. The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through its API — not the raw Docker API." |
-| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 — get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
+| 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "DOME never exposes your Docker daemon directly. The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through the DOME API, not the raw Docker API." |
+| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
 | 8 | `SiteFooter.vue` | n/a | Logo, tagline, GitHub / Changelog / GPL-3.0 links; any version text renders `v{VERSION} preview` from `src/site.ts`. |
 
 ### Showcase rows (section 4)
@@ -38,6 +38,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 **Do**
 - Short, imperative sentences. Concrete nouns: `docker ps`, Compose, volumes, GHCR, Socket.
 - Mono for commands, container names, eyebrows.
+- No em dashes in site copy.
 - Keep the "v{VERSION} preview" pill and the trusted-network note.
 - Contrast the *experience* (list vs map).
 

@@ -7,7 +7,7 @@ import { REPO_URL } from '../../site'
     <div class="glow" aria-hidden="true" />
     <div class="container inner">
       <header v-reveal class="head">
-        <p class="eyebrow">// 07 — get started</p>
+        <p class="eyebrow">// 07 · get started</p>
         <h2>Up in 60 seconds.</h2>
         <p class="lede">Self-hosted with Docker Compose. One Socket per host, and every container shows up in one place.</p>
         <a class="btn" :href="`${REPO_URL}#readme`" target="_blank" rel="noopener">

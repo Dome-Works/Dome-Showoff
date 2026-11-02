@@ -55,7 +55,7 @@ const rows = [
   <section id="diagram" class="contrast">
     <div class="container">
       <header v-reveal class="head">
-        <p class="eyebrow">// 01 — the difference</p>
+        <p class="eyebrow">// 01 · the difference</p>
         <h2>Other managers give you a table. DOME gives you a map.</h2>
       </header>
 
@@ -70,7 +70,7 @@ const rows = [
           <p class="label label--after">After</p>
           <div class="media">
             <div class="glow" aria-hidden="true" />
-            <BrowserFrame title="DOME — Diagrams">
+            <BrowserFrame title="DOME: Diagrams">
               <img
                 width="1600"
                 height="900"

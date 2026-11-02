@@ -67,7 +67,7 @@ const layouts = [
   <section id="architecture" class="arch">
     <div class="container">
       <header v-reveal class="head">
-        <p class="eyebrow">// 06 — architecture</p>
+        <p class="eyebrow">// 06 · architecture</p>
         <h2>Small agents. One view.</h2>
       </header>
 
@@ -90,7 +90,7 @@ const layouts = [
       </div>
 
       <p v-reveal class="caption">
-        <strong>DOME never exposes your Docker daemon directly.</strong> The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through its API — not the raw Docker API.
+        <strong>DOME never exposes your Docker daemon directly.</strong> The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through the DOME API, not the raw Docker API.
       </p>
     </div>
   </section>

@@ -3,10 +3,10 @@ import BrowserFrame from '../ui/BrowserFrame.vue'
 
 const rows = [
   {
-    eyebrow: '// 02 — multi-host',
+    eyebrow: '// 02 · multi-host',
     title: 'Every host. One registry.',
     body: 'Register one Socket agent per Docker host. Each host gets its own diagram tab, and Socket version mismatches are flagged.',
-    frame: 'DOME — Sockets',
+    frame: 'DOME: Sockets',
     src: '/media/sockets.jpg',
     alt: 'DOME Sockets page listing hosts homelab, nas and edge-pi, all reachable',
     w: 1600,
@@ -18,10 +18,10 @@ const rows = [
     ],
   },
   {
-    eyebrow: '// 03 — act on it',
+    eyebrow: '// 03 · act on it',
     title: 'Spot it. Start it.',
     body: 'An exited container shows up red on the diagram. Open it to see its image and volumes (name, mount path, size, RO/RW), then start, stop or delete it.',
-    frame: 'DOME — Container details',
+    frame: 'DOME: Container details',
     src: '/media/exited-panel.jpg',
     alt: 'uptime-kuma container details panel showing state exited, image, volume kuma_data and start, stop, delete buttons',
     w: 2560,
@@ -30,10 +30,10 @@ const rows = [
     toast: 'Started uptime-kuma.',
   },
   {
-    eyebrow: '// 04 — compose',
+    eyebrow: '// 04 · compose',
     title: 'Write Compose. Deploy.',
     body: 'Create a stack, edit its compose file in the built-in editor, then deploy. DOME runs docker compose up on that host. Stacks found on the host stay read-only.',
-    frame: 'DOME — Stacks',
+    frame: 'DOME: Stacks',
     src: '/media/compose-editor.jpg',
     alt: 'DOME Edit compose file dialog for the media stack, with the compose YAML for jellyfin, sonarr and radarr in a code editor',
     w: 2560,
