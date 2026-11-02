@@ -1,5 +1,25 @@
 <script setup lang="ts">
+import { onBeforeUnmount, ref } from 'vue'
 import { REPO_URL } from '../../site'
+
+const COMMAND =
+  'curl -fsSL https://raw.githubusercontent.com/Dome-Works/DOME/main/docker-compose.yml -o docker-compose.yml && docker compose up -d'
+
+const status = ref<'' | 'Copied' | 'Copy failed'>('')
+let timer: ReturnType<typeof setTimeout> | undefined
+
+async function copy() {
+  try {
+    await navigator.clipboard.writeText(COMMAND)
+    status.value = 'Copied'
+  } catch {
+    status.value = 'Copy failed'
+  }
+  clearTimeout(timer)
+  timer = setTimeout(() => (status.value = ''), 1500)
+}
+
+onBeforeUnmount(() => clearTimeout(timer))
 </script>
 
 <template>
@@ -10,6 +30,16 @@ import { REPO_URL } from '../../site'
         <p class="eyebrow">// 07 · get started</p>
         <h2>Up in 60 seconds.</h2>
         <p class="lede">Self-hosted right in Docker, the place you know best. One main host &amp; one Socket per additional Docker environment, and never look back to the Docker CLI.</p>
+        <div class="cmd">
+          <div class="bar">
+            <button type="button" class="copy" aria-label="Copy command" @click="copy">{{ status || 'Copy' }}</button>
+            <span class="sr" aria-live="polite">{{ status }}</span>
+          </div>
+          <div class="scroll" tabindex="0" role="region" aria-label="Quick start command">
+            <code>{{ COMMAND }}</code>
+          </div>
+        </div>
+        <p class="hint">Then open <code>http://localhost:5200</code> and register the local Socket at <code>http://socket:8080</code>.</p>
         <a class="btn" :href="`${REPO_URL}#readme`" target="_blank" rel="noopener">
           Get started on GitHub
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -65,6 +95,89 @@ import { REPO_URL } from '../../site'
   color: var(--muted);
 }
 
+.cmd {
+  width: 100%;
+  max-width: 720px;
+  min-width: 0;
+  margin-top: var(--space-3);
+  text-align: left;
+  background: var(--terminal);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.copy {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0 var(--space-3);
+  background: none;
+  color: var(--muted);
+  border: 0;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: var(--fs-small);
+  cursor: pointer;
+  transition: color var(--dur-fast);
+}
+
+.copy:hover {
+  color: var(--text);
+}
+
+.copy:focus-visible,
+.scroll:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.scroll {
+  overflow-x: auto;
+  padding: var(--space-4);
+}
+
+.scroll code {
+  display: block;
+  width: max-content;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.scroll code::before {
+  content: '$ ';
+  color: var(--running);
+  user-select: none;
+}
+
+.hint {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--muted);
+}
+
+.hint code {
+  font-family: var(--font-mono);
+  color: var(--text);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -107,7 +220,8 @@ import { REPO_URL } from '../../site'
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn,
+  .copy {
     transition: none;
   }
 
