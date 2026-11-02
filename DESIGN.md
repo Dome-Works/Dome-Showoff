@@ -32,7 +32,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 ### Showcase rows (section 4)
 - "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots.
 - "Spot it. Start it." → `media/exited-panel.jpg`, hotspot ring on ▶ at **left 74.9%, top 44.7%**. When the row enters view, an HTML toast "Started uptime-kuma." slides in at bottom-right with a green check.
-- "Write Compose. Deploy." → `media/stack-deployed.jpg`.
+- "Write Compose. Deploy." → `media/compose-editor.jpg`, hotspot ring on the Save button at **left 85.5%, top 83.0%**.
 
 ## Copy voice
 **Do**
@@ -69,7 +69,7 @@ Zip is extracted to `$Z = <scratchpad>/zip/brag-output`.
 | `media/diagram-overview.jpg` | `$Z/work/explore-diagrams.png` (1600×900; full homelab diagram, media/monitoring/proxy stacks) | jpg q85 |
 | `media/sockets.jpg` | `$Z/work/explore-sockets.png` (1600×900; 3 hosts, green dots at x≈294px, y≈214/263/312 → **left 18.4%, top 23.8/29.2/34.7%**) | jpg q85 |
 | `media/exited-panel.jpg` | `$Z/work/probe-a.png` (3840×2160; uptime-kuma exited + details panel; ▶ hotspot at **left 74.9%, top 44.7%**) | resize to 2560w, jpg q80 |
-| `media/stack-deployed.jpg` | bottom-right quadrant of `$Z/work/sheet1.png` (crop x 960–1920, y 540–1080: media stack pane + "Deployed media." toast) | jpg q85. *shortcut: only 960×540; re-capture at 3× with the zip's `capture.mjs` against a DOME client for crisper output* |
+| `media/compose-editor.jpg` | `shots/compose.png` (3840×2160, Edit compose file modal) | resize 2560w, jpg q82 |
 | `media/logo.png` (512), `media/favicon.png` (64), `media/apple-touch-icon.png` (180) | root `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (1254², logo on a black square) | Circle mask so corners are transparent; resize |
 | `media/og.jpg` | root `brag.jpg` | Crop/resize to 1200×630 |
 
