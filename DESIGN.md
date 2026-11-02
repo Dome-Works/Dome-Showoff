@@ -1,4 +1,4 @@
-# DESIGN.md: dome-works.com
+# DESIGN.md: dome-works.nl
 
 Single-page Vue marketing site for **DOME** (github.com/Dome-Works/DOME, v0.6.1 preview, GPL-3.0), a self-hosted Docker manager. Audience: technical Docker and homelab users. Token and component contract lives in `DESIGN_SYSTEM.md`.
 

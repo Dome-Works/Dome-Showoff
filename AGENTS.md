@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## What this repo is
-Single-page Vue 3 + TypeScript marketing site for **DOME** (github.com/Dome-Works/DOME), a self-hosted Docker manager. Live at https://dome-works.com via GitHub Pages. No router, no state library, no CSS framework.
+Single-page Vue 3 + TypeScript marketing site for **DOME** (github.com/Dome-Works/DOME), a self-hosted Docker manager. Live at https://dome-works.nl via GitHub Pages. No router, no state library, no CSS framework.
 
 Read `DESIGN.md` (concept, copy, Content facts, Asset map) and `DESIGN_SYSTEM.md` (tokens, components) before any work.
 
@@ -32,6 +32,7 @@ npm run preview
 4. **Reduced motion required.** Every animation is off under `prefers-reduced-motion: reduce`.
 5. **Assets live in `public/media/`**, referenced as `/media/…`.
 6. No new dependencies beyond: vue, vite, @vitejs/plugin-vue, typescript, vue-tsc, @vue/tsconfig, @fontsource-variable/geist, @fontsource-variable/geist-mono. Keep code lean.
+   Any new npm dependency (incl. transitive) must have an OSI-approved license compatible with GPL-3.0 (MIT, ISC, BSD, Apache-2.0, OFL for fonts, …). Check with the `npm query '*' --json | node -e "…"` one-liner in README ("Licenses") before adding.
 7. **Small commits per task**: message `T<id>: <summary>` (T<id> is the plan task id), ending with the trailer `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Stage explicit paths only (never `git add -A` / `git add .`). Run `git add <paths>` and `git commit` as separate calls.
 8. **Never push**, open PRs, or touch the remote.
 9. **On a permission denial, stop.** Don't retry or work around it; report the blocked command.
@@ -42,5 +43,5 @@ Edit `VERSION` in `src/site.ts` (the one place). Rebuild.
 
 ## Deploy
 - Push to `main` triggers `.github/workflows/deploy.yml`: checkout → setup-node 22 + npm cache → `npm ci` → `npm run build` → configure-pages → upload-pages-artifact (`dist`) → deploy-pages.
-- `public/CNAME` is documentation only: the Actions deploy ignores it. The custom domain is set in **repo Settings → Pages** (Source "GitHub Actions", custom domain `dome-works.com`, Enforce HTTPS).
+- `public/CNAME` is documentation only: the Actions deploy ignores it. The custom domain is set in **repo Settings → Pages** (Source "GitHub Actions", custom domain `dome-works.nl`, Enforce HTTPS).
 - DNS: apex A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` CNAME to `dome-works.github.io`.
