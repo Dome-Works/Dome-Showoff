@@ -23,7 +23,7 @@ npm run preview
 - `src/App.vue`, `src/main.ts`, `src/env.d.ts`
 - `public/CNAME`, `public/robots.txt`, `public/sitemap.xml` and `public/media/*` (all images, video, logo, favicons, og image). Nothing else in `public/`.
 - `index.html` (title, OG/Twitter tags, favicon, theme-color `#0b0f14`), `vite.config.ts` (`base: '/'`)
-- `.github/workflows/deploy.yml`
+- `.github/workflows/deploy.yml`, `.github/dependabot.yml` (monthly grouped npm + Actions updates)
 - Docs: `DESIGN.md`, `DESIGN_SYSTEM.md`, `AGENTS.md`, `CLAUDE.md`, `README.md`
 
 ## Hard rules (permanent)
