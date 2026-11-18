@@ -10,6 +10,11 @@ updates:
       monthly-batch:
         patterns:
           - "*"
+    ignore:
+      # TypeScript 7 drops typescript/lib/tsc, which vue-tsc (via @volar/typescript, needs <7) requires.
+      # Remove once vue-tsc supports TS 7.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /
