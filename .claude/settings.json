@@ -6,7 +6,6 @@
     "superpowers@anthropic-plugin-directory": true,
     "ponytail@ponytail": true,
     "chrome-devtools-mcp@chrome-devtools-plugins": true,
-    "aikido@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
