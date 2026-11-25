@@ -10,7 +10,6 @@
   --text: #e6edf3;
   --muted: #8b9bb0;
   --accent-glow: rgb(90 159 255 / 0.35);
-  --warning: #e3b341;
   --terminal: #0f141b;
   --bg-glass: color-mix(in srgb, var(--bg) 72%, transparent);
 

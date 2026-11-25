@@ -50,22 +50,6 @@ onBeforeUnmount(() => clearTimeout(timer))
         </a>
       </header>
 
-      <p v-reveal class="warn" role="note">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 3 2 21h20zM12 10v5M12 18h.01" />
-        </svg>
-        <span>Preview: no authentication yet. Run DOME on a trusted private network.</span>
-      </p>
     </div>
   </section>
 </template>
@@ -200,25 +184,6 @@ onBeforeUnmount(() => clearTimeout(timer))
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--glow-accent);
-}
-
-.warn {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  max-width: 560px;
-  margin: 0;
-  padding: var(--space-4) var(--space-5);
-  text-align: left;
-  color: var(--text);
-  background: color-mix(in srgb, var(--warning) 8%, var(--panel));
-  border: 1px solid var(--warning);
-  border-radius: var(--radius-md);
-}
-
-.warn svg {
-  flex: none;
-  color: var(--warning);
 }
 
 @media (prefers-reduced-motion: reduce) {

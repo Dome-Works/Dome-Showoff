@@ -15,7 +15,6 @@
 | `--text` | `#e6edf3` | body and headings |
 | `--muted` | `#8b9bb0` | secondary text (must stay ≥ 4.5:1 on `--bg`) |
 | `--accent-glow` | `#5a9fff` at .35 alpha (`rgb(90 159 255 / .35)`) | glows, beam |
-| `--warning` | `#e3b341` | preview note only |
 | `--terminal` | `#0f141b` | terminal card body |
 | `--bg-glass` | `color-mix(in srgb, var(--bg) 72%, transparent)` | translucent surfaces: NavBar blur bg, overlays |
 
