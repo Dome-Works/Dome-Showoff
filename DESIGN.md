@@ -1,6 +1,6 @@
 # DESIGN.md: dome-works.nl
 
-Single-page Vue marketing site for **DOME** (github.com/Dome-Works/DOME, v0.6.1 preview, GPL-3.0), a self-hosted Docker manager. Audience: technical Docker and homelab users. Token and component contract lives in `DESIGN_SYSTEM.md`.
+Single-page Vue marketing site for **DOME** (github.com/Dome-Works/DOME, v0.7.0 preview, GPL-3.0), a self-hosted Docker manager. Audience: technical Docker and homelab users. Token and component contract lives in `DESIGN_SYSTEM.md`.
 
 ## Concept: "Control room under glass"
 The logo is a glass dome over three servers wired to one point. The site borrows that: dark ink background, blueprint dot-grid, and a blue glow that "domes" over each key visual. It should feel like looking at infrastructure, not at a SaaS landing page.
@@ -26,7 +26,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 | 4 | `sections/ShowcaseSection.vue` | n/a | Three alternating rows (below). |
 | 5 | `sections/FeatureGrid.vue` | `#features` | Bento of 8 cards from the Content facts. Inline SVG icons, no icon library. |
 | 6 | `sections/ArchitectureSection.vue` | `#architecture` | Inline SVG: Browser → Client → Server → Socket ×3 → Docker Engine, with animated edges. Caption: "DOME never exposes your Docker daemon directly. The Server talks to your connected hosts through Sockets, so only the operations DOME needs are exposed through the DOME API, not the raw Docker API." |
-| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted right in Docker, the place you know best. One main host & one Socket per additional Docker environment, and never look back to the Docker CLI."), one copyable quick-start command (`curl -fsSL …/docker-compose.yml -o docker-compose.yml && docker compose up -d`, implemented locally in the component, `$` prompt not copied) with a small muted line below ("Then open `http://localhost:5200` and register the local Socket at `http://socket:8080`, or any additional sockets through `http://device-ip:5110`."), one primary button "Get started on GitHub" → `{REPO_URL}#readme`, then the amber preview note: "Preview: no authentication yet. Run DOME on a trusted private network." |
+| 7 | `sections/InstallSection.vue` | `#install` | Deliberately simple (detailed steps live in the repo README). Centered: eyebrow "// 07 · get started", H2 "Up in 60 seconds.", one muted line ("Self-hosted right in Docker, the place you know best. One main host & one Socket per additional Docker environment, and never look back to the Docker CLI."), one copyable quick-start command (`curl -fsSL …/docker-compose.yml -o docker-compose.yml && docker compose up -d`, implemented locally in the component, `$` prompt not copied) with a small muted line below ("Then open `http://localhost:5200` and register the local Socket at `http://socket:8080`, or any additional sockets through `http://device-ip:5110`."), and one primary button "Get started on GitHub" → `{REPO_URL}#readme`. |
 
 ### Showcase rows (section 4)
 - "Every host. One registry." → `media/sockets.jpg`, hotspot ring on the three green status dots at **left 2.5%, top 42.9 / 56.9 / 70.9%**.
@@ -38,7 +38,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 - Short, imperative sentences. Concrete nouns: `docker ps`, Compose, volumes, GHCR, Socket.
 - Mono for commands, container names, eyebrows.
 - No em dashes in site copy.
-- Keep the "v{VERSION} preview" pill and the trusted-network note.
+- Keep the "v{VERSION} preview" pill.
 - Contrast the *experience* (list vs map).
 
 **Don't**
@@ -55,7 +55,7 @@ The logo is a glass dome over three servers wired to one point. The site borrows
 - Install commands are reference facts. The site shows only the one-line quick start from Page structure §7; the rest is README only. Install (published), verbatim: `docker compose pull` then `docker compose up -d`. Then open `http://localhost:5200/sockets` and register a Socket named `Local` at `http://socket:8080`.
 - From source (README only), verbatim: `git clone https://github.com/Dome-Works/DOME.git` / `cd DOME` / `docker compose -f dev.docker-compose.yml up --build -d`.
 - Stack: .NET 10 + FastEndpoints + EF Core/SQLite server, React 19 + React Flow client, Socket agent on the Docker Unix socket.
-- Limits (never contradict them): no auth; no TLS between server and socket; no network or dependency edges yet; update checks cover Docker Hub + public GHCR only.
+- Limits (never contradict them): no TLS between server and socket; no network or dependency edges yet; update checks cover Docker Hub + public GHCR only.
 
 ## Asset map
 **All used assets live in `public/media/`** (served at `/media/…`; includes favicons and og image). After outputs are verified, root originals and everything unused are deleted: `brag-output.zip`, `brag.jpg`, `ChatGPT Image Sep 3, 2026, 10_55_47 AM(2).png` (and `brag.mp4`, which is moved). The repo root then holds only code, docs and LICENSE.
